@@ -35,8 +35,6 @@ def test_estimate_conditional_probabilities():
     assert torch.allclose(cond_probs[1], torch.tensor([1 / 5, 2 / 5, 2 / 5], dtype=torch.float32))
     
 
-
-
 @pytest.mark.order(6)
 def test_predict_naive_bayes():
     # Given
