@@ -136,6 +136,8 @@ class LogisticRegression:
         Returns:
             torch.Tensor: The computed binary cross-entropy loss.
         """
+        epsilon: float = 1e-5
+        predictions = torch.clamp(predictions, epsilon, 1 - epsilon)
         ce_loss: torch.Tensor = -torch.mean(targets * torch.log(predictions) + (1 - targets) * torch.log(1 - predictions))
         return ce_loss
 

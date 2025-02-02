@@ -83,10 +83,3 @@ def bag_of_words(
             else:
                 bow[vocab[word]] += 1
     return bow
-
-def create_datasets() -> None:
-    df = pd.read_parquet('data/train-00000-of-00001.parquet')
-    df.to_csv('data/train.txt', index=False, sep='\t', header=False)
-
-    df = pd.read_parquet('data/test-00000-of-00001.parquet')
-    df.to_csv('data/test.txt', index=False, sep='\t', header=False)
